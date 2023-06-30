@@ -1,6 +1,14 @@
 // Constructor function : To create multiple instances.
 function Counter(element, value) {
-  console.log(element, value);
+  this.counter = element;
+  this.value = value;
+  this.decreaseBtn = element.querySelector(".decrease");
+  this.resetBtn = element.querySelector(".reset");
+  this.increaseBtn = element.querySelector(".increase");
+  this.valueDOM = element.querySelector(".value");
+  this.valueDOM.textContent = this.value;
+
+  console.log(this.resetBtn);
 }
 
 // Create new instances.
