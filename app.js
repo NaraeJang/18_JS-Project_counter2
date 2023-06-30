@@ -8,6 +8,16 @@ function Counter(element, value) {
   this.increaseBtn = element.querySelector(".increase");
   this.valueDOM = element.querySelector(".value");
   this.valueDOM.textContent = this.value;
+
+  // bind this to all functions. By using bind, we can indicate this to this.counter.
+  this.decrease = this.decrease.bind(this);
+  this.reset = this.reset.bind(this);
+  this.increase = this.increase.bind(this);
+
+  // Add event listeners.
+  this.decreaseBtn.addEventListener("click", this.decrease);
+  this.resetBtn.addEventListener("click", this.reset);
+  this.increaseBtn.addEventListener("click", this.increase);
 }
 
 // To get me the element.
